@@ -56,6 +56,8 @@ def receive_rigid_body_frame(robot_id, position, rotation_quaternion):
 """
 def search():
     print("searching")
+    # IDEA: create occupancy grid around the lab that then allows the robot to mark visited
+    # squares that it can then stay away from
 
 """
     With the type of target having been identified, this function centers the target within its camera
@@ -91,14 +93,13 @@ if __name__ == "__main__":
     streaming_client.set_client_address(clientAddress)
     streaming_client.set_server_address(optitrackServerAddress)
     streaming_client.set_use_multicast(True)
-    # Configure the streaming client to call our rigid body handler on the emulator to send data out.
     streaming_client.rigid_body_listener = receive_rigid_body_frame
-
-    # Start up the streaming client now that the callbacks are set up.
-    # This will run perpetually, and operate on a separate thread.
     is_running = streaming_client.run()
-
     print("Connected to OptiTrack System")
+
+    # set up camera + filter, and ultrasound sensor
+    # Will probably need to pass those things to the primary control loop
+
     
     print("Looking for robot")
     while robot_id not in positions:
