@@ -1,5 +1,9 @@
 import cv2
 import numpy as np
+
+'''
+    This file is for testing the color filter and blob detection
+'''
  
 cap = cv2.VideoCapture(0)
  
