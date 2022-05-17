@@ -296,7 +296,6 @@ def return_target():
 
     wait_time = 1
 
-    # Big search loop that checks for several limits, like ultrasound and # of squares checked
     while 1:
         print_grid()
         # check the ultrasound distance

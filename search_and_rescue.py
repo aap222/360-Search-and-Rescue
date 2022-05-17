@@ -24,7 +24,7 @@ RESCUE_CIRCLE = [0, 0, 0]
 
 # Connect to the robot
 IP_ADDRESS = '192.168.0.202' #robot's IP address
-clientAddress = "192.168.0.48" # user's computer's IP address
+clientAddress = "192.168.0.2" # user's computer's IP address
 optitrackServerAddress = "192.168.0.4" # IP address of camera system
 robot_id = 2
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

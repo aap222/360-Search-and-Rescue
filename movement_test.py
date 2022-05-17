@@ -218,7 +218,7 @@ def search():
     global STATE
     SPOTTED = False
 
-    wait_time = 0
+    wait_time = 1
 
     # Big search loop that checks for several limits, like ultrasound and # of squares checked
     while not SPOTTED and EXPLORED < SQUARES:
@@ -240,6 +240,7 @@ def search():
         if bounds:
             #print("Continuing movement in " + get_direction())
             move()
+            print_grid()
             time.sleep(wait_time)
         if not bounds:
             if STATE == UP:
@@ -249,6 +250,7 @@ def search():
             if STATE == DOWN:
                 STATE = RIGHT
             #print("Changing movement to direction " + get_direction())
+            print_grid()
             time.sleep(wait_time)
             continue
             
